@@ -1,0 +1,25 @@
+(* Project Euler Problem 10 
+   
+   The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+   Find the sum of all the primes below two million.
+*)
+
+(* find prime numbers *)
+
+let is_prime n = 
+    let n = max n (-n) in
+    let rec is_not_divisor d =
+      d * d > n || (n mod d <> 0 && is_not_divisor (d+1)) in
+    is_not_divisor 2;;
+
+(*sum the prime numbers below 2 million *)
+
+let sum = ref 0 in 
+for i = 2 to 2000000 do  
+  if is_prime i then  
+    begin
+      sum:= !sum + i;
+      Printf.printf "%d prime number before 2 million summed is %d\n" i !sum; 
+    end
+ done;;
