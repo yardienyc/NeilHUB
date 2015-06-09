@@ -19,3 +19,4 @@ let is_prime n =
  
 let primes = (all_primes 2 200000) in
   List.nth primes 10000;;
+print_int !primes;;
