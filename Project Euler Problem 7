@@ -6,6 +6,7 @@ What is the 10 001st prime number?
 
 *)
 
+(* Check for primes *)
 let is_prime n =
     let n = max n (-n) in
     let rec is_not_divisor d =
@@ -19,4 +20,8 @@ let is_prime n =
  
 let primes = (all_primes 2 200000) in
   List.nth primes 10000;;
-print_int !primes;;
+  print_int !primes;;
+
+(* Output 
+ #     - : int = 104743
+ *)
